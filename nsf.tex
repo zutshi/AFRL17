@@ -1,0 +1,79 @@
+\documentclass{style/nsf}
+
+\graphicspath{{figures/}}
+
+%%%%%%%%%% for CV
+%\usepackage[left=0.75in,top=0.6in,right=0.75in,bottom=0.6in]{geometry} % Document margins
+\usepackage[nodayofweek]{datetime}
+\usepackage{filemod}
+\usepackage{url}
+\usepackage{fancyhdr}
+%%%%%%%%%% for CV
+
+%\newcommand\todo[1]{[[\textcolor{red}{\textsf{#1}}]]}
+
+\usepackage{xspace}
+\usepackage{wrapfig}
+\usepackage{tikz}
+\usetikzlibrary{arrows,backgrounds,positioning,fit,automata,shapes,snakes,patterns}
+\usetikzlibrary{arrows,backgrounds,decorations,decorations.pathmorphing,positioning,fit,automata,shapes,snakes,patterns}
+\usetikzlibrary{shapes.geometric, arrows, positioning, calc, matrix}
+\tikzset{block/.style = {draw, fill=blue!20, rectangle,
+                         minimum height=3em, minimum width=6em},
+        sum/.style = {draw, fill=blue!20, circle, node distance=1cm},
+        input/.style = {coordinate},
+        output/.style = {coordinate},
+        pinstyle/.style = {pin edge={to-,thin,black}}
+}
+\input{generic.macros.tex}
+\input{specific.macros.tex}
+
+\begin{document}
+
+% A. Cover Sheet
+% A number of the boxes contained on the Cover Sheet are electronically pre-filled as part of the FastLane login process
+% Complete the rest of your info there
+
+% B. Project Summary
+\title{Verifiable Autonomy Architecture}
+%\newsection{B}
+%\input{sections/summary}
+\input{sections/requirements}
+
+% C. Table of Contents
+% A Table of Contents is automatically generated for the proposal by FastLane
+
+% D. Project Description
+%\newpage\newsection{D}
+\input{sections/description}
+
+% E. References Cited
+\newpage\newsection{E}
+\renewcommand\refname{References Cited}
+\bibliography{sections/references}
+
+\appendix
+
+% F. Biographical Sketch(es)
+\newpage\newsection{F}
+\input{sections/bio}
+
+% G. Budget Justification
+\newpage\newsection{G}
+\input{sections/budget}
+
+%  H. Current and Pending Support
+%\newpage\newsection{H}
+%\input{sections/support}
+
+% I. Facilities, Equipment and Other Resources
+%\newpage\newsection{I}
+%\input{sections/resources}
+
+% J. Special Information and Supplementary Documentation
+%\newpage\newsection{J}
+%\input{sections/data}		% Data Management Plan (Required)
+%\input{sections/postdoc} % Postdoctoral Researcher Mentoring Plan (if applicable)
+
+%\input{cv}
+\end{document}

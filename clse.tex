@@ -1,0 +1,135 @@
+\begin{wrapfigure}{r}{0.3\textwidth}
+\vspace{-2.5cm}
+%\centering
+  \begin{center} \tikzstyle{line} = [draw, very thick, color=black!80, -latex']
+  \tikzstyle{block} = [rectangle, minimum width=4.0cm, minimum height=1.5cm, text centered, draw=black, fill=blue!25]
+  \tikzstyle{cell} = [rectangle, minimum width=0.7cm, minimum height=0.7cm, text centered, draw=black, densely dashed]
+  \tikzstyle{var} = [rectangle, text centered]
+  \tikzstyle{arw} = [->, thick,>=stealth,shorten <=2pt, shorten >=2pt]
+  \tikzstyle{arw2} = [->, thick,>=stealth, shorten >=2pt]
+  \tikzstyle{Arw} = [thick,double,->,shorten <=2pt,shorten >=2pt, >=stealth]
+  \tikzstyle{line} = [thick]
+  \tikzstyle{abvmid} = [above, midway]
+
+  \def\boxh{1}
+  %midpoint
+  \def\mdpt{\boxh/2-\boxh/5}
+
+  % Relative horizontal position of blocks against controller and plant
+  % blocks
+
+  % Column1: Cy, Cx
+  \def\colax{1.6}
+  % Column2: s, u
+  \def\colbx{0.8}
+  % Column3: s', u
+  \def\colcx{0.8}
+  % Column3: Cx', Cy
+  \def\coldx{1.6}
+
+  \begin{tikzpicture}[scale=1.0, align=center, on grid, auto],
+        %\node (code) [rectangle, draw=black] {Controller\\Code};
+      \node (controller) [block]{
+	Control Software \\ (program analysis)
+        %\node (controller) [block] {Controller \\
+        %$\pgmA:(C^y,\varphi)\mapsto(\psi,U)$
+	};
+
+        \node (plant) [block, below = 2.5cm of controller] {
+            Plant Model\\(abstract)};
+          %$\begin{array}{lcl}
+          %  \vx' &=& \simulate(\vx,\vu,\sampletime)\\
+          %   \vy &=& g(\vx)\\
+          %\end{array}$};
+
+        % ($(controller.west)+(-\colcx,-0.5-\mdpt)$)
+
+    %\draw[Arw] (code) -- (controller) node[midway,right] {Symbolic\\Execution};
+
+    \def\Cypos{($(controller.west)-(\colax,\mdpt)$)}
+    %\node (Cy) [cell, left of=controller, node distance=3.0cm] {$y \in C_y$};
+    %\node (Cy) at \Cypos [cell] {$C^y$};
+    %    \draw[arw] (Cy.east) -- ($(controller.west)-(0,\mdpt)$) node[abvmid]{\scriptsize{\sample}};
+    %\node (Cx) [cell, left of=plant, node distance=3.0cm] {$x \in C_x$};
+    %\def\Cxpos{($(plant.west)+(-\colax,\mdpt)$)}
+    \def\Cxpos{($(plant.west)-(\colax,\mdpt)$)}
+    %\node (Cx) at \Cxpos [cell] {$C^x$};
+        %\draw[arw] (Cx.east) -- ($(plabvmid.west)-(0,\mdpt)$) nodeabvmid]{\scriptsize{\sample}};
+    %\draw[arw] (Cx.east) -- ($(plant.west)-(0,\mdpt)$) node[abvmid]{\scriptsize{\sample}};
+
+    %\node (s) [var, above of=Cy, node distance=1.0cm] {$s$};
+
+    %\node (s) at ($(controller.west)+(-\colbx,\mdpt)$) [var] {$\varphi$};
+    %    \draw[arw] (s.east) -- ($(controller.west)+(0,\mdpt)$) node[abvmid] {};
+
+    %\node (u) [var, below of=Cx, node distance=1.0cm] {$\vu$};
+    %\def\upos{($(plant.west)-(\colbx,\mdpt)$)}
+    \def\upos{($(plant.west)+(-\colbx,\mdpt)$)}
+    %\node (u) at \upos [var] {$\vu$};
+        %\draw[arw] (u) -- ($(plant.west)+(0,\mdpt)$);
+        %\draw[arw] (u.east) -- ($(plant.west)+(0,\mdpt)$) node[midway,above] {sample};
+
+      %\def\Cx_pos{($(plant.east)+(\coldx,\mdpt+0.5)$)}
+
+    %\node (Cx_) at \Cx_pos [cell] {$C^{x'}$};
+    %\draw[arw] ($(plant.east)+(0,\mdpt)$) -- (Cx_.west) node[abvmid,sloped]{\scriptsize{$\quant$}};
+    %\node (Cy_) [cell, below = 1.5cm of Cx_] {$C^y$};
+    %\draw[arw] ($(plant.east)-(0,\mdpt)$) -- (Cy_.west) node[abvmid,sloped]{\scriptsize{$\quant$}};
+
+    %\draw[arw] (Cy_) |- (-4.5,-4) |- (Cy.west);
+        %\draw[arw] (Cy_) |- ++(-7.4,-0.8) |- (Cy.west);
+    %\coordinate (x) at (left = 1 of Cy, below = 1 of Cy_);
+        %\draw[arw] (Cy_) |- (x) |- (Cy.west);
+    %\node (CxCymid) at ($(Cx)!0.5!(Cy)$) [] {};
+    %\node (Cx_Cy_mid) at ($(Cx_)!0.5!(Cy_)$) []{};
+        %\coordinate (Cx_Cy_mid) at ($(Cx_)!0.5!(Cy_)+(0.2,0)$) []{};
+    %\coordinate (CxCymid) at ($(Cx)!0.5!(Cy)$) [] {};
+    %\coordinate (CxCymid2) at ($(CxCymid) - (0.5,0)$) []{};
+    %\node (CxCymid2) at ($(CxCymid) - (0.5,0)$) []{};
+    %\draw[line, shorten <=2pt] (Cx_.south) -- (Cx_Cy_mid);
+    %\draw[line, shorten <=2pt] (Cy_.north) -- (Cx_Cy_mid);
+    %\draw[line] (Cx_Cy_mid) -| ++(0.5,-1.3) -| (CxCymid2);
+    %\draw[thick] (CxCymid2) -- (CxCymid);
+    %\draw[arw2] (CxCymid2)--(Cy.south);
+    %\draw[arw2] (CxCymid2)--(Cx.north);
+
+
+    \node (control_input) at ($(controller.east)+(\colcx,-0.5-\mdpt)$) [var] {$\vu$};
+        \draw[arw] ($(controller.east)$) -- ($(controller.east)+(0.5,0)$) -- ($(plant.east)+(0.5,0.3)$) -- ($(plant.east)+(0,0.3)$);
+    \node (omegap) at
+    ($(plant.east)+(1.0,-0.3)$) [var] {$\vec{\omega_p}$};
+        \draw[arw] ($(plant.east)+(0.5,-0.3)$) --
+        ($(plant.east)+(0,-0.3)$);
+
+    \node (output) at ($(controller.west)+(-\colcx,-1.5-\mdpt)$) [var] {$\vy$};
+    \node (output_hat) at ($(controller.west)+(-\colcx,0.2-\mdpt)$) [var] {$\hat{\vy}$};
+        \draw[arw] ($(plant.west)$) -- ($(plant.west)-(0.5,0)$) -- ($(controller.west)-(0.5,0.3)$) -- ($(controller.west)-(0,0.3)$);
+
+    \node (omegac) at
+    ($(controller.west)-(1.0,-0.3)$) [var] {$\vec{\omega_c}$};
+        \draw[arw] ($(controller.west)-(0.5,-0.3)$) --
+        ($(controller.west)-(0,-0.3)$);
+
+        \node (attacker) [rectangle, text centered, draw=black,
+        fill=white] at (-2.5,-1.25) {$+$};
+
+    \node (attack) at ($(attacker.east)+(0.7,0)$) [var] {$\vec{a}$};
+        \draw[arw] ($(attacker.east)+(0.5,0)$) -- ($(attacker.east)$);
+
+    %\node (s_) at ($(controller.east)+(\colcx,\mdpt)$) [var] {$\psi$};
+     %   \draw[arw] ($(controller.east)+(0,\mdpt)$) -- (s_);
+
+    %\node (u_) at ($(controller.east)-(-\colcx,\mdpt)$) [var] {$U$};
+        %\draw[arw] ($(controller.east)-(0,\mdpt)$) -- (u_);
+        %\draw[arw] (u_) |- ++(-1.0,-0.7) -| (u);
+        % TODO: node's position should be relative to u but is hard
+        % coded!
+        %\draw[arw] (u_) -- ++(0,-0.7) -- ++(-5.0,0) node[midway]{$\scriptsize{\mathsc{sample\_smt}}$} -- (u);
+
+\end{tikzpicture}
+\end{center}
+%\vspace{-0.5cm}
+\caption{Closed loop symbolic execution.}
+\vspace{-1.0cm}
+\label{fig:clse}
+\end{wrapfigure}

@@ -1,0 +1,182 @@
+\section{Project Description}
+
+%What is the problem
+%
+%Why is the problem imp
+%
+%Application of prior falsification work to UxAS architecture
+%
+%Why can I investigate the problem
+%    Falsification expertise - citations
+
+\subsection{Introduction}
+
+%understand the problem?
+
+We propose to address the challenges involved in the reachability
+analysis of hybrid systems. Specefically, we are interested in
+designing automatic falsification methods which can analyze black box
+models of physical sub-systems (dynamical systems) against controller
+code.
+
+This problem is hard due to several reasons. Hybrid Systems are
+difficult to analyze~\cite{henzinger1995s}. Traditional analysis methods~\cite{alur2000discrete,} involves
+designing of abstractions.
+Flowpipes~\cite{Chen2012taylor,
+Frehse+Others/2011/SpaceEx, althoff2016combining,}
+Furthermore, testing methodologies for
+software controlled plants are lacking. Current indsutry practices
+perform separate tests on the software and the plant. Although useful,
+these strategies do not address the combined functional behavior.
+Falsification~\cite{annpureddy2011s, donze2010breach}.
+We
+proposed a symbolic-numeric approach in~\cite{zutshi2016symbolic}
+extending earlier approaches to falsification~\cite{majumdar2012clse}.
+
+To improve the scalability (and time-horizon) of the approach, we
+propose to use PWA moodels. PWA models can be automatically computed
+Piece-Wise Affine (PWA) models for the plant, which can be composed
+with control code and model checked using mature model
+checkers~\cite{CBMC,}
+The accuracy of the PWA models can be controlled by several parameters
+including the discretization step $\Delta_t$, quantization function
+$Q$ and number of samples.
+
+%But it is not scalable?
+
+involves the complex
+interaction between software and physical world, but also missing
+analysis for considering software artifacts along with plant models
+- The models are often not there or not detailed enough verify
+properties at hand
+
+% In the specefic context problem
+UAV subsystems testing procedure
+
+-
+- Verifying low level controllers against physical dynamics- subsystem
+falsification: but does not compose. Module level verification
+
+proposal:
+    - pwa modeling
+        - Can be generated quickly
+        - Existing methods to check
+    - Verifying low level controllers against physical dynamics -
+      subsystem falsification: but does not compose.
+    - security?
+
+
+\subsection{Background and Challenges}
+
+We are primarily interested analysing hybrid systems which result due
+to the pairing of software controllers with continuous dynamical
+systems. For analysis, we use the model of sampled data control
+systems.
+
+The challeneges are as follows
+\textbf{Safety}
+\begin{itemize}
+    \item Is there a behavior of the system which violates a given
+        safety specification.
+    \item Discovered violations must be reproducible. This entails a
+        combined analysis of the software and physical model, as
+        separate analysis will result in false positives.
+    \item Ability to explore software artifacts which can lead to
+        functional `bugs'.
+    \item Symbolic approach is white box in nature and rigorous,
+        whereas the numerical approach for hybrid dynamical sysems is
+        scalable.
+\end{itemize}
+
+\subsection{Proposed Research}
+
+We propose to address the safety and security analysis for control
+system implementations. We now describe our model and assumptions.
+
+\input{clse.tex}
+
+\mypara{Sampled Data Control Model}
+A \emph{sampled data control system} (SDCS) consists of two
+components, as illustrated in Figure~\ref{fig:clse}. (a) A
+discrete time plant model $P$
+%described by two functions $\simulate$ and $g$ as in Definition~\ref{def:plant_model}
+, and (b) a controller implementation
+$C$ described by a program whose semantics are formally defined.
+%$\pgmF$ as in Definition~\ref{controller_model}.
+Finally, the closed-loop parallel composition assumes that the
+continuous plant has been discretized with the controller's sampling
+period $\Delta_t$.
+
+
+\mypara{Safety Analysis of Sampled Data Control Systems}
+
+Discrete time abstractions
+
+Falsifications and reachability of software controlled physical
+sytems.
+
+- Needs accurate models
+- Black box falsification can work
+- Reachability
+%
+%- Falsification of automated co-operative unmanned air vehicle missions
+
+
+We are exploring relational PWA models of plants,
+specifiaclly built for the purpose of reachability analysis.
+Relational abstractions~\cite{Tiwari2012} and our previous
+research~\cite{zutshi2012timed}
+
+These
+models can either be model checked directly using off-the-shelf SMT
+solvers or combined with software controllers and model checked.
+~\cite{Zutshi2016}.
+
+Furthermore, we would like to explore models based on machine learning
+due to the recent progress~\cite{pulina2012challenging,
+pulina2011never, pulina2011checking} and~\cite{katz2017reluplex}.
+
+
+\mypara{Security Analysis of Sampled Data Control Systems}
+\todo{falsification for security}
+
+We also propose to extend the falsification framework to find attack
+signals. We focus on the most general model where the sensor
+can be compromised. The model also includes an intrusion detection
+system, which further constraints on the attack signal, thereby
+focusing the search for non-trivial attacks.
+Using the same framework for search for exogenous disturbance, we
+propose to find attack signals.
+
+\subsection{Prior Work}
+
+In our prior research, we have explored the problem of falsification
+in hybrid systems from both the perspective of white box and black box
+testing. In~\cite{Zutshi+Others/2013/Trajectory}, we explored the use
+of multiple shooting for re-formulating the reachability decision
+problem into the feasibility problem and solved using off-the-shelf
+optimization engines. We then extended this approach to black box
+testing~\cite{zutshi2014multiple} by combining multiple shooting with
+a counter-example guided abstraction refinement (CEGAR) procedure.
+Finally, we combined symbolic analysis of programs with the analysis
+of hybrid dynamical system and proposed a falsification approach for
+sampled data control systems in~\cite{zutshi2016symbolic}. All the
+above approaches were prototyped as tools and benchmarked on several
+case studies.
+
+
+\todo{security}
+
+%   human-machine interaction to decentralized cooperative control
+%   automatically construct a surveilance path given high level goles
+%   route planning, coordinate behavior among multiple vehicles, connect with external software and hardware devices, validate mission requests, log and diagram message traffic, and optimize task ordering
+%   common message passing architecture
+
+
+
+
+% \subsection{Proposed Study}
+
+% The Project Description should provide a clear statement of the work to be undertaken and must include: objectives for the period of the proposed work and expected significance; relation to longer-term goals of the PI's project; and relation to the present state of knowledge in the field, to work in progress by the PI under other support and to work in progress elsewhere.
+
+% The Project Description should outline the general plan of work, including the broad design of activities to be undertaken, and, where appropriate, provide a clear description of experimental methods and procedures.  Proposers should address what they want to do, why they want to do it, how they plan to do it, how they will know if they succeed, and what benefits could accrue if the project is successful. The project activities may be based on previously established and/or innovative methods and approaches, but in either case must be well justified. These issues apply to both the technical aspects of the proposal and the way in which the project may make broader contributions.

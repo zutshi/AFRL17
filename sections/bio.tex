@@ -1,0 +1,316 @@
+\fontsize{10}{12}
+\title{CV}
+\renewcommand*{\thefilemoddate}[3]{\formatdate{#3}{#2}{#1}}
+
+% remove top rule
+\renewcommand{\headrulewidth}{0pt}
+%\fancyfoot[R]{last updated:\filemodprintdate{\jobname}}
+%\fancyfoot[L]{\today\ \currenttime}
+% Set the right side of the footer to be the page number
+%\fancyfoot[R]{\thepage}
+\pagestyle{fancy}
+
+\name{Aditya Zutshi} % Your name
+
+\address{(678)~$\cdot$~429~$\cdot$~5502 \\ aditya.zutshi@colorado.edu} % Your phone number and email
+\address{\url{http://eces.colorado.edu/~zutshi/}}
+\address{Boulder, Colorado} % Your secondary address (optional)
+
+%\begin{document}
+\begin{center}
+\vspace{-.2cm}
+\scriptsize{({updated: \filemodprintdate{\jobname}})}
+\vspace{.5cm}
+\end{center}
+
+%----------------------------------------------------------------------------------------
+%       RESEARCH SECTION
+%----------------------------------------------------------------------------------------
+%\begin{rSection}{Research Interests}
+%	Automatic methods for reasoning about the safety of hybrid systems and embedded control systems.
+%\end{rSection}
+
+%----------------------------------------------------------------------------------------
+%       EDUCATION SECTION
+%----------------------------------------------------------------------------------------
+
+\begin{rSection}{Education}
+
+{\bf University of Colorado, Boulder} \hfill {\em May 2011 - July 2016} \\ 
+Ph.D in Electrical and Electronics Engineering\\
+Dissertation: Reachability Analysis of Cyber-Physical Systems using Symbolic-Numeric Techniques.\\
+Adviser: Prof. Sriram Sankaranarayanan (Dept. of Computer Science)
+
+{\bf University of Colorado, Boulder} \hfill {\em Aug 2009 - May 2011} \\ 
+M.S. in Electrical and Electronics Engineering \\
+GPA: 3.80/4
+
+{\bf Manipal University, Manipal, India} \hfill {\em Aug 2003 - May 2007} \\ 
+Bachelor of Engineering in Electronics \& Communications \\
+GPA: 8.43/10
+
+\end{rSection}
+
+%----------------------------------------------------------------------------------------
+%       PUBS SECTION
+%----------------------------------------------------------------------------------------
+\begin{rSection}{Publications}
+\textbf{Symbolic-Numeric reachability analysis of closed-loop control software. [Best Student Paper Award]}\\
+Aditya Zutshi, Sriram Sankaranarayanan, Jyotirmoy V. Deshmukh and Xiaoqing Jin\\
+In Proceedings of the 19th International Conference on Hybrid Systems: Computation and Control (HSCC) (pp. 135-144). ACM, 2016.
+
+\textbf{Multiple shooting, CEGAR-based falsification for hybrid systems. [Best Paper Award]}\\
+Aditya Zutshi, Sriram Sankaranarayanan, Jyotirmoy V. Deshmukh, and James Kapinski.\\
+In Proceedings of the 14th International Conference on Embedded Software (EMSOFT), p. 5. ACM, 2014.
+
+\textbf{A trajectory splicing approach to concretizing counterexamples for hybrid systems.}\\
+Aditya Zutshi, Sriram Sankaranarayanan, Jyotirmoy V. Deshmukh, and James Kapinski.\\
+In 52nd IEEE Conference on Decision and Control (CDC), pp. 3918-3925. IEEE, 2013.
+
+\textbf{Timed relational abstractions for sampled data control systems.}\\
+Aditya Zutshi, Sriram Sankaranarayanan, and Ashish Tiwari\\
+In Computer Aided Verification (CAV) (pp. 343-361). Springer Berlin Heidelberg
+
+\end{rSection}
+
+
+%----------------------------------------------------------------------------------------
+%       HONORS & AWARDS
+%----------------------------------------------------------------------------------------
+\begin{rSection}{Awards \& Honors}
+Selected for French-American Doctoral Exchange (FADEx 2016: Cyber-physical Systems)\\
+Best Paper Awards (EMSOFT 2014, HSCC 2016)\\
+Manipal Inst. of Tech Scholarship (2003-04, 2004-05)
+\end{rSection}
+
+%\pagebreak
+%----------------------------------------------------------------------------------------
+%       CURRENT PROJECTS SECTION
+%----------------------------------------------------------------------------------------
+\begin{rSection}{ Projects}
+
+\begin{rSubsection}{\vspace{0.2cm}\hspace{-0.1in}\underline{Current}}{}{}{}
+\vspace{0.2cm}
+\item
+	\textbf{PWA-Modeling for Falsification:} We are working on improving the search for unsafe behaviors in black box dynamical systems by using symbolic methods. Using regression on numerical simulations, we build Piece-Wise Affine models. SMT solvers and linear programming is used to model check the PWA models. The generated counterexamples guide the falsification of safety properties.
+\end{rSubsection}
+\begin{rSubsection}{\vspace{-0.2cm}\hspace{-0.1in}\underline{Completed}}{}{}{}
+\vspace{0.2cm}
+  \setlength\itemsep{1em}
+\item
+	\textbf{S3CAM-X:} A tool to find unsafe behaviors in closed loop control software. We augmented S3CAM with symbolic software analysis to automatically generate test cases and find unsafe behaviors in grey-box closed loop control software (white-box control software + black-box hybrid dynamical systems). The usefulness of the approach was demonstrated by finding `bugs' in several benchmarks.
+\item
+	\textbf{S3CAM:} A tool to find violations of safety properties in black box descriptions of continuous hybrid dynamical systems. We proposed trajectory splicing to automatically search for error trajectories using only numerical simulations. A combination of multiple shooting and Counter-Example Guided Abstraction Refinement (CEGAR) was used.
+\item
+	\textbf{Falsification using Trajectory Optimization:} We developed automatic falsification techniques based on multiple shooting and trajectory optimization. The aim was to find violations of safety properties in hybrid automata. The prototype used off-the-shelf optimization engines.
+\item
+     \textbf{Timed Relational Abstractions:} We devised timed relational abstractions for sampled-data control systems: a combination of continuous hybrid dynamical systems and discrete controllers. We used interval arithmetic to compute verified (bounded matrix exponential) solutions to linear differential equations in conjunction with SMT solvers to model check their properties.
+\end{rSubsection}
+\vspace{-0.2cm}
+\textit{The implementations of the above projects can be found at:} \url{https://github.com/zutshi}
+
+\end{rSection}
+%----------------------------------------------------------------------------------------
+%       TALKS
+%----------------------------------------------------------------------------------------
+\begin{rSection}{Talks}
+
+\textbf{Reachability Analysis of Cyber-Physical Systems},
+French-American Doctoral Exchange Seminar (FADEx),
+July 2016
+
+\textbf{Symbolic-Numeric Reachability Analysis of Closed-Loop Control Software}, April 2016.
+	\begin{itemize}
+    \itemsep-6pt
+      \item[-] Robert Bosch GmbH, Renningen, Stuttgart, Germany
+      \item[-] Centre d'intégration (CEA), Palaiseau, France
+      \item[-] HSCC 2016, Vienna, Austria
+    \end{itemize}
+
+\textbf{Beyond single shooting: Iterative approaches to falsification},
+ACC 2015, Chicago, USA,
+July 2015.
+
+\textbf{Multiple Shooting, CEGAR-based Falsification for Hybrid Systems},
+EMSOFT 2014, New Delhi, India,
+Oct. 2014.
+
+\textbf{Falsification of safety properties for Hybrid Systems using trajectory splicing},
+Charles University, Prague, Czech Republic,
+Dec. 2013.
+
+\textbf{A Trajectory Splicing Approach to Concretizing Counterexamples for Hybrid Systems},
+CDC 2013, Florence, Italy,
+Dec. 2013.
+
+\textbf{Timed Relational Abstractions For Sampled Data Control Systems},
+MVD 2012, The University of Kansas, Lawrence, Kansas, USA,
+Sept. 2012
+\end{rSection}
+
+%\pagebreak
+
+%----------------------------------------------------------------------------------------
+%       Work-Ex SECTION
+%----------------------------------------------------------------------------------------
+\begin{rSection}{Research Expirience}
+
+\begin{rSubsection}{Duke University \emph{(Postdoctoral Researcher)}}{Feburary 2017 - Present}{Adviser: Prof.Miroslav Pajic}{Durham, NC}
+\item[]
+\vspace{-0.1cm}
+Security of cyber physical systems.
+\end{rSubsection}
+
+\begin{rSubsection}{Toyota Technical Center \emph{(Internship)}}{August 2014 - December 2014}{Mentors: Dr.Jyotirmoy Deshmukh and Dr.James Kapinski}{Gardena, CA}
+\item[]
+\vspace{-0.1cm}
+%\emph{Mentors: Dr.Jyotirmoy Deshmukh and Dr.James Kapinski}\\
+Work published in HSCC 2016.
+\end{rSubsection}
+
+\begin{rSubsection}{Toyota Technical Center \emph{(Internship)}}{January 2013 - April 2013}{Mentors: Dr.Jyotirmoy Deshmukh and Dr.James Kapinski}{Gardena, CA}
+\item[]
+\vspace{-0.1cm}
+%\emph{Mentors: Dr.Jyotirmoy Deshmukh and Dr.James Kapinski}\\
+Work published in CDC 2013 and EMSOFT 2014.
+\end{rSubsection}
+
+\begin{rSubsection}{INRIA \emph{(Internship)}}{July 2012 - August 2012}{Mentor: Dr.Bertrand Jeannet}{Grenoble, Rhone-Alpes, France}
+\item[]
+\vspace{-0.1cm}
+%\emph{Mentor: Dr.Bertrand Jeannet}\\
+	Worked on abstract acceleration of loops describing discrete dynamical systems.\\
+    Used linear algebra techniques to soundly summarize loops.
+\end{rSubsection}
+
+\begin{rSubsection}{SRI International \emph{(Internship)}}{May 2011 - August 2011}{Mentor: Dr.Ashish Tiwari}{Menlo Park, CA}
+\item[]
+\vspace{-0.1cm}
+%\emph{Mentor: Dr.Ashish Tiwari}\\
+Work published in CAV 2012.
+\end{rSubsection}
+\end{rSection}
+
+\begin{rSection}{Professional Developer Experience}
+\begin{rSubsection}{Toshiba}{August 2007 - July 2009}{Associate Software Engineer}{Bangalore, Karnataka, India}
+\setlength{\itemindent}{.1in}
+\item
+	\emph{Toshiba Media Framework} (based on OpenMax IL): Worked on implementation and test suite design. Developed GTK+ based GUI to demo the framework usage.
+\item
+	\emph{Full Segment ISDB-T(Integrated Services Digital Broadcasting - Terrestrial)}: Worked on design and implementation of OpenMAX IL components.
+
+\emph{Roles Undertaken:} designing, prototyping, implementing, testing, debugging and documenting.
+\end{rSubsection}
+
+%\begin{rSubsection}{Manipal Dot Net}{October 2006 - May 2007}{Intern}{Manipal, Karnataka, India}
+%\item[]
+%\emph{Mentors: Dr.Narasimha Bhat and Srikanth Bhat}\\
+%        Designed and implemented an SMBus controller, a generic I2C slave and other 2-wire bus designs on CPLDs for
+%ALTERA. Designed test-benches for verification.
+%\end{rSubsection}
+
+\end{rSection}
+
+
+
+
+
+
+
+%%----------------------------------------------------------------------------------------
+%%       COURSE PROJECTS SECTION
+%%----------------------------------------------------------------------------------------
+%\begin{rSection}{Masters Course Projects}
+%
+%\item Compiler for Python:
+%Implemented a Python to Assembly translator, which compiles loops, functions and classes to assembly.
+%
+%\item Library providing Continuations:
+%Designed a lightweight library which provides interfaces to create continuations, and used them to provide
+%co-routines. Interfaces were also provided to let the co-routines synchronize and communicate based on the
+%actor model.
+%
+%\item Implemented LTL vacuity analysis package in VIS (Verification Interacting with Synthesis)
+%
+%\item Real Time ball following robot using VxWorks:
+%Designed a real time, PID controlled rover which utilizes a differential drive and a fixed mounted camera to navigate.
+%
+%\item Implemented PODEM: Path Oriented Decision Making algorithm (automatic test pattern generation for digital circuits)
+%
+%\item Implemented Green Screen Effect (Chroma Keying) on Altera Cyclone II FPGA
+%
+%%\end{rSubsection}
+%
+%\end{rSection}
+%
+%%----------------------------------------------------------------------------------------
+%%       RELEVANT COURSES SECTION
+%%----------------------------------------------------------------------------------------
+%\begin{rSection}{Relevant Courses (Grad Level)}
+%
+%\begin{tabular}{ @{} >{}l @{\hspace{12ex}} l }
+%Optimal Control & Dynamical Systems     \\
+%Formal verification of VLSI systems & Synthesis of VLSI systems \\
+%Hybrid automata for Cyber Physical Systems & Linear programming \\
+%Real-Time Embedded Systems & Theorem Proving in Isabelle        \\
+%Compiler Construction & Thinking Concurrently
+%
+%\end{tabular}
+%\end{rSection}
+
+
+%%----------------------------------------------------------------------------------------
+%%       PROFESSIONAL EXPERIENCE SECTION
+%%----------------------------------------------------------------------------------------
+%
+%\begin{rSection}{Professional Experience}
+%
+%\begin{rSubsection}{Toshiba}{August 2007 - July 2009}{Associate Software Engineer}{Bangalore, Karnataka, India}
+%
+%Roles Undertaken: Designing, Prototyping, Implementing, Testing and Documentation (Design documentations and User Manuals)
+%
+%\textbf{Projects}
+%\begin{enumerate}
+%\item
+%        Implemented Toshiba Media Framework (based on OpenMax IL) and its test suite. Developed GTK+ based GUI to demo the framework usage.
+%\item
+%        Designed and implemented OpenMAX IL components for Full Segment ISDB-T (Integrated Services Digital Broadcasting – Terrestrial) DTV %project.
+%\end{enumerate}
+%
+%\end{rSubsection}
+%
+%\end{rSection}
+
+%----------------------------------------------------------------------------------------
+%       TECHNICAL STRENGTHS SECTION
+%----------------------------------------------------------------------------------------
+\begin{rSection}{Technical Skills}
+
+\begin{tabular}{ @{} >{\bfseries}l @{\hspace{6ex}} l }
+Computer Languages & Python, C, C++, OCaml (basic), Verilog (basic)\\
+Technical Tools & MATLAB, Simulink, VIS, SAL/HSAL, SpaceEx, Apron, PPL, PySMT,\\&Z3, Yices, KLEE, Pathcrawler, S-TaLiRo, GLPK\\
+Tools & Git, Subversion, \LaTeX
+\end{tabular}
+
+\end{rSection}
+
+%----------------------------------------------------------------------------------------
+%       EXAMPLE SECTION
+%----------------------------------------------------------------------------------------
+
+%\begin{rSection}{Section Name}
+
+%Section content\ldots
+
+%\end{rSection}
+
+%----------------------------------------------------------------------------------------
+
+%\def\parsedate #1:20#2#3#4#5#6#7#8\empty{20#2#3/#4#5/#6#7}
+%\def\moddate#1{\expandafter\parsedate\pdffilemoddate{#1}\empty}
+%Last updated: \moddate{\jobname}
+%\vspace{10pt}
+%\hrule
+
+
+%\end{document}
