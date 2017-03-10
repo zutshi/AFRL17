@@ -18,14 +18,14 @@ controlled hybrid dynamical systems. We expect the research to yield
 techniques which can be used to analyze relevant subsystems of UxAS
 and other generic cyber-physical systems.
 
-Specefically, we are interested in improving the applicability of
+Specifically, we are interested in improving the applicability of
 existing automatic falsification methods and investigate their
 applicability to finding security vulnerabilities of controllers under
 attack. We assume the model of the system under test/attack as a
 sampled data control system (SDCS), where the controller program
-samples and actuates a simulatable black model of the plant (a hybrid
+samples and actuates a   black model of the plant (a hybrid
 dynamical system) periodically. Furthermore, we want to benchmark such
-grey-box falsification techniques on UxAS sub-systms. To accomplish
+grey-box falsification techniques on UxAS sub-systems. To accomplish
 these objectives, we propose the below directions.
 \begin{itemize}
     \item \emph{Automatic falsification}: Apply grey-box falsification
@@ -35,7 +35,7 @@ these objectives, we propose the below directions.
         analysis. The models will be constructed using the available
         black box plant simulators or data.
     \item \emph{Security Analysis}:
-        Transform the problem of searching for an attack signal whcich
+        Transform the problem of searching for an attack signal which
         can take the system to unsafe states, into a falsification
         problem.
 \end{itemize}
@@ -43,7 +43,7 @@ these objectives, we propose the below directions.
 Automatic falsification has been explored in our previous
 work~\cite{Zutshi+Others/2013/Trajectory, zutshi2014multiple,
 zutshi2016symbolic}. Construction of piece-wise affine (PWA) plant
-moodels for reachability analysis has been explored
+models for reachability analysis has been explored
 in~\cite{Zutshi2016} with preliminary results. Such models are
 amenable to symbolic analysis and can be generated automatically or
 semi-automatically
@@ -64,7 +64,7 @@ has been explored in~\cite{pajic2014robustness, pajic2015attack}.
 % - The models are often not there or not detailed enough verify
 % properties at hand
 
-% % In the specefic context problem
+% % In the specific context problem
 % UAV subsystems testing procedure
 
 % -
@@ -84,7 +84,7 @@ has been explored in~\cite{pajic2014robustness, pajic2015attack}.
 
 Reachability analysis of hybrid systems is a undecidable for all but
 the simplest kind~\cite{henzinger1995s}. Existing analysis can be
-parititoned into verification~\cite{tiwari2012hybridsal,
+partitioned into verification~\cite{tiwari2012hybridsal,
 Chen2012taylor, Frehse+Others/2011/SpaceEx, althoff2016combining,
 duggirala2015c2e2} and falsification techniques~\cite{annpureddy2011s,
 donze2010breach, dreossi2015efficient}. The verification procedures
@@ -92,7 +92,7 @@ use over-approximations to verify a given property whereas current
 falsification techniques are comparable to testing methodologies and
 search for a concrete violations of the property.
 
-We are interested in analysing hybrid systems which result due to the
+We are interested in analyzing hybrid systems which result due to the
 pairing of software controllers with continuous dynamical systems.
 These are commonly modeled as sampled data control systems.
 
@@ -126,9 +126,9 @@ However, recent work on the formal analysis of neural networks has
 been explored using SMT solvers in~\cite{pulina2012challenging,
 pulina2011never, pulina2011checking, katz2017reluplex}. Due to recent
 advances in non-linear SMT solvers, we would like to explore such
-models in the present frameowkr of falsification.
+models in the present framework of falsification.
 
-%The challeneges are as follows
+%The challenges are as follows
 %Apply our previous work~\cite{zutshi2014multiple, zutshi2016symbolic}
 %to UxAS. Explore falsification using models
     %Discovered violations must be reproducible. This entails a combined analysis of the software and physical model, as separate analysis will result in false positives.
@@ -158,7 +158,7 @@ falsification of safety properties in ~\cite{}.
 
 %- Falsification of automated co-operative unmanned air vehicle missions
 
-We are exploring relational PWA models of plants, specifiaclly built
+We are exploring relational PWA models of plants, specifically built
 for the purpose of reachability analysis.  Relational
 abstractions~\cite{Tiwari2012} and our previous
 research~\cite{zutshi2012timed}. Treating the system as a black box,
@@ -166,34 +166,30 @@ we split the problem into (a) modeling the behavior of the system
 using a piecewise affine discrete time model and (b) encoding the
 search for falsification as a bounded model checking problem. Such a
 model is specialized for the given property.  SMT solvers and
-optimization techniques can be used to model check the reuslting
+optimization techniques can be used to model check the resulting
 system.  Furthermore, we would like to explore models based on machine
 learning in the same vein using non-linear SMT
 solvers~\cite{gao2013dreal}.
 
 %If found, we check
-%the existance of the violation in the original system to ensure
+%the existence of the violation in the original system to ensure
 %reproducibility
-
-
-
 
 \mypara{Security Analysis of Sampled Data Control Systems}
 \todo{falsification for security}
 
-We also propose to extend the falsification framework to find attack
-signals. We focus on the most general model where the sensor
-can be compromised. The model also includes an intrusion detection
-system, which further constraints on the attack signal, thereby
-focusing the search for non-trivial attacks.
-Using the same framework for search for exogenous disturbance, we
-propose to find attack signals.
+We propose to extend the falsification framework to find attack
+signals. We focus on the most general model where the sensor can be
+compromised. The model also includes an intrusion detection system,
+which further constraints on the attack signal, thereby focusing the
+search for non-trivial attacks.  Using the same framework for search
+for exogenous disturbance, we propose to find attack signals.
 
 
 
 
 %   human-machine interaction to decentralized cooperative control
-%   automatically construct a surveilance path given high level goles
+%   automatically construct a surveillance path given high level goals
 %   route planning, coordinate behavior among multiple vehicles, connect with external software and hardware devices, validate mission requests, log and diagram message traffic, and optimize task ordering
 %   common message passing architecture
 
