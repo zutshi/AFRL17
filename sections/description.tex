@@ -136,19 +136,29 @@ checked using mature model checkers~\cite{kroening2014cbmc}.
 \subsection{Proposed Research}
 
 In our prior research, we have explored the problem of falsification
-in hybrid systems from the perspective of white/grey/black box
-testing. In~\cite{Zutshi+Others/2013/Trajectory}, we explored the use
-of multiple shooting for re-formulated the reachability decision
-problem into the feasibility problem and solved using off-the-shelf
-optimization engines. We extended this approach to black box
-testing~\cite{zutshi2014multiple} by combining multiple shooting with
-a counter-example guided abstraction refinement (CEGAR) procedure.
-Finally, we combined symbolic analysis of programs with the analysis
-of hybrid systems for falsification analysis of sampled data control
-systems in~\cite{zutshi2016symbolic}.
+in hybrid systems from the perspective of white/grey/black box testing
+using a combination of off-the-shelf optimization
+engines~\cite{Zutshi+Others/2013/Trajectory}, multiple shooting and
+counter-example guided abstraction refinement (CEGAR)
+procedure~\cite{zutshi2014multiple}. This formed the basis for
+combined symbolic analysis of programs and black box analysis of
+hybrid systems for falsification analysis of sampled data control
+systems in~\cite{zutshi2016symbolic}.  Using these techniques, we
+propose to address the safety and security analysis for control system
+implementations specific to UxAS.
+
+%. In~\cite{Zutshi+Others/2013/Trajectory}, we explored the use
+%of multiple shooting for re-formulated the reachability decision
+%problem into the feasibility problem and solved using off-the-shelf
+%optimization engines. We extended this approach to black box
+%testing~\cite{zutshi2014multiple} by combining multiple shooting with
+%a counter-example guided abstraction refinement (CEGAR) procedure.
+%Finally, we combined symbolic analysis of programs with the analysis
+%of hybrid systems for falsification analysis of sampled data control
+%systems in~\cite{zutshi2016symbolic}.
 %All the above approaches were prototyped as tools and benchmarked on several case studies.
-Using these techniques, we propose to address the safety and security
-analysis for control system implementations.
+%Using these techniques, we propose to address the safety and security
+%analysis for control system implementations.
 
 %- Falsification of automated co-operative unmanned air vehicle
 %missions
@@ -174,14 +184,14 @@ solvers~\cite{gao2013dreal}.
 %reproducibility
 
 \mypara{Security Analysis of Sampled Data Control Systems}
-\todo{falsification for security}
 
 We propose to extend the falsification framework to find attack
-signals. We focus on the most general model where the sensor can be
-compromised. The model also includes an intrusion detection system,
-which further constraints on the attack signal, thereby focusing the
-search for non-trivial attacks.  Using the same framework for search
-for exogenous disturbance, we propose to find attack signals.
+signals. We focus on the most general attack model, where the sensor
+can be compromised. The model also includes an intrusion detection
+system, which further constraints on the attack signal, thereby
+focusing the search for non-trivial attacks.  Using the falsification
+framework developed for searching exogenous disturbances, we propose
+to find attack signals.
 
 
 
