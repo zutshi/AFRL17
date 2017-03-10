@@ -1,8 +1,8 @@
-\begin{wrapfigure}{r}{0.3\textwidth}
-\vspace{-2.5cm}
+\begin{wrapfigure}{r}{0.4\textwidth}
+%\vspace{-2.5cm}
 %\centering
   \begin{center} \tikzstyle{line} = [draw, very thick, color=black!80, -latex']
-  \tikzstyle{block} = [rectangle, minimum width=4.0cm, minimum height=1.5cm, text centered, draw=black, fill=blue!25]
+  \tikzstyle{block} = [rectangle, minimum width=4.4cm, minimum height=1.5cm, text centered, draw=black, fill=blue!25]
   \tikzstyle{cell} = [rectangle, minimum width=0.7cm, minimum height=0.7cm, text centered, draw=black, densely dashed]
   \tikzstyle{var} = [rectangle, text centered]
   \tikzstyle{arw} = [->, thick,>=stealth,shorten <=2pt, shorten >=2pt]
@@ -30,7 +30,7 @@
   \begin{tikzpicture}[scale=1.0, align=center, on grid, auto],
         %\node (code) [rectangle, draw=black] {Controller\\Code};
       \node (controller) [block]{
-	Control Software \\ (program analysis)
+	Control Software + IDS\\ (program analysis)
         %\node (controller) [block] {Controller \\
         %$\pgmA:(C^y,\varphi)\mapsto(\psi,U)$
 	};
@@ -130,6 +130,6 @@
 \end{center}
 %\vspace{-0.5cm}
 \caption{Closed loop symbolic execution.}
-\vspace{-1.0cm}
+%\vspace{-1.0cm}
 \label{fig:clse}
 \end{wrapfigure}
