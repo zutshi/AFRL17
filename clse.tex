@@ -1,5 +1,5 @@
-\begin{wrapfigure}{r}{0.4\textwidth}
-%\vspace{-2.5cm}
+\begin{wrapfigure}{r}{0.42\textwidth}
+\vspace{-1.5cm}
 %\centering
   \begin{center} \tikzstyle{line} = [draw, very thick, color=black!80, -latex']
   \tikzstyle{block} = [rectangle, minimum width=4.4cm, minimum height=1.5cm, text centered, draw=black, fill=blue!25]
@@ -14,6 +14,8 @@
   \def\boxh{1}
   %midpoint
   \def\mdpt{\boxh/2-\boxh/5}
+      %TODO: better def of mdpt
+    %($(controller) !.5! (plant)$)
 
   % Relative horizontal position of blocks against controller and plant
   % blocks
@@ -110,8 +112,9 @@
         \draw[arw] ($(controller.west)-(0.5,-0.3)$) --
         ($(controller.west)-(0,-0.3)$);
 
+        %\node (attacker) [rectangle, text centered, draw=black, fill=white] at ($(plant.west)+(-0.5,controller.y-plant.y)$) {$+$};
         \node (attacker) [rectangle, text centered, draw=black,
-        fill=white] at (-2.5,-1.25) {$+$};
+        fill=white] at ($($(plant.west)-(0.5,0)$) !.5!  ($(controller.west)-(0.5,0.3)$)$) {$+$};
 
     \node (attack) at ($(attacker.east)+(0.7,0)$) [var] {$\vec{a}$};
         \draw[arw] ($(attacker.east)+(0.5,0)$) -- ($(attacker.east)$);
@@ -128,8 +131,8 @@
 
 \end{tikzpicture}
 \end{center}
-%\vspace{-0.5cm}
+\vspace{-0.4cm}
 \caption{Closed loop symbolic execution.}
-%\vspace{-1.0cm}
+\vspace{-2.8cm}
 \label{fig:clse}
 \end{wrapfigure}
