@@ -18,15 +18,15 @@ controlled hybrid dynamical systems. We expect the research to yield
 techniques which can be used to analyze relevant subsystems of UxAS
 and other generic cyber-physical systems.
 
-Specifically, we are interested in improving the applicability of
-existing automatic falsification methods and investigate their
-applicability to finding security vulnerabilities of controllers under
-attack. We assume the model of the system under test/attack as a
-sampled data control system (SDCS), where the controller program
-samples and actuates a   black model of the plant (a hybrid
-dynamical system) periodically. Furthermore, we want to benchmark such
-grey-box falsification techniques on UxAS sub-systems. To accomplish
-these objectives, we propose the below directions.
+Specifically, we are interested in improving the existing automatic
+falsification methods and investigating their applicability in finding
+security vulnerabilities of controllers under attack. We model the
+system under test/attack as a sampled data control system (SDCS),
+where the controller program periodically samples and actuates a
+black model of the plant (a hybrid dynamical system). Finally, we want
+to benchmark such grey-box falsification techniques on UxAS
+sub-systems. To accomplish these objectives, we propose the below
+directions.
 \begin{itemize}
     \item \emph{Automatic falsification}: Apply grey-box falsification
         techniques to UxAS subsystems.
@@ -35,22 +35,18 @@ these objectives, we propose the below directions.
         analysis. The models will be constructed using the available
         black box plant simulators or data.
     \item \emph{Security Analysis}:
-        Transform the problem of searching for an attack signal which
-        can take the system to unsafe states, into a falsification
+        Transform the problem of searching for attack signals, (which
+        can compromise the safe operation of the system) into a falsification
         problem.
 \end{itemize}
 
 Automatic falsification has been explored in our previous
-work~\cite{Zutshi+Others/2013/Trajectory, zutshi2014multiple,
+works~\cite{Zutshi+Others/2013/Trajectory, zutshi2014multiple,
 zutshi2016symbolic}. Construction of piece-wise affine (PWA) plant
 models for reachability analysis has been explored
-in~\cite{Zutshi2016} with preliminary results. Such models are
-amenable to symbolic analysis and can be generated automatically or
-semi-automatically
-Furthermore, symbolic models can be composed with
-control code and model checked using mature model
-checkers~\cite{kroening2014cbmc}. Security analysis for linear systems
-has been explored in~\cite{pajic2014robustness, pajic2015attack}.
+in~\cite{Zutshi2016} with preliminary results.  Security analysis for
+linear systems has been explored in~\cite{pajic2014robustness,
+pajic2015attack}.
 
 %The accuracy of the PWA models can
 %be controlled by several parameters including the discretization step
@@ -90,7 +86,7 @@ duggirala2015c2e2} and falsification techniques~\cite{annpureddy2011s,
 donze2010breach, dreossi2015efficient}. The verification procedures
 use over-approximations to verify a given property whereas current
 falsification techniques are comparable to testing methodologies and
-search for a concrete violations of the property.
+search for concrete violations of the given property.
 
 We are interested in analyzing hybrid systems which result due to the
 pairing of software controllers with continuous dynamical systems.
@@ -103,30 +99,33 @@ time plant model $P$ , and (b) a controller implementation $C$
 described by a program whose semantics are formally defined.  Finally,
 the closed-loop parallel composition assumes that the continuous plant
 has been discretized with the controller's sampling period $\Delta_t$.
-
 The SDCS model allows for modeling of measurement noise at the
 controller and plant disturbances using exogenous input $\omega_c$ and
 $\omega_p$. Additionally, the generic attack model is described as an
 additive input $\vec{a}$ to the plant's output $\vy$, at the sensor.
 
-Current testing methodologies for software controlled plants
-separately test the software controller and the plant. Although
-useful, such strategies do not address the combined functional
-behavior. Hence we propose building up on our earlier work of
-symbolic-numeric falsification approaches~\cite{zutshi2016symbolic}.
-%, augmenting the more rigorous, but less
-%scalable verification approaches~\cite{majumdar2012clse}.
-
-PWA models have been proposed in the past for modeling hybrid
-dynamical systems (surveyed in~\cite{paoletti2007identification}),
-with their verification in~\cite{yordanov2007model,
-yordanov2010formal, koutsoukos2003safety, batt2007model}. As the
-individual models are linear, they are amenable to formal analysis.
-However, recent work on the formal analysis of neural networks has
-been explored using SMT solvers in~\cite{pulina2012challenging,
-pulina2011never, pulina2011checking, katz2017reluplex}. Due to recent
-advances in non-linear SMT solvers, we would like to explore such
-models in the present framework of falsification.
+Existing analysis for software controlled plants separately tests the
+software controller and the plant. To test an SDCS, existing tools
+require its translation to hybrid automata representations (which can
+be prohibitive to construct), their performance suffers.  Moreover,
+existing security analyses do not address such systems. A scalable and
+combined analysis is desirable as it avoids false positives. To
+achieve this, we propose building up on our earlier work of
+symbolic-numeric falsification~\cite{zutshi2016symbolic}. The
+extension will be investigated by incorporating different models for
+the plant. In the past, PWA models have been proposed for modeling
+hybrid dynamical systems (surveyed
+in~\cite{paoletti2007identification}), and their verification studied
+in~\cite{yordanov2007model, yordanov2010formal, koutsoukos2003safety,
+batt2007model}. As the individual models are linear, they are amenable
+to formal analysis.  Moreover, recent work on the formal analysis of
+neural networks has been explored using SMT solvers
+in~\cite{pulina2012challenging, pulina2011never, pulina2011checking,
+katz2017reluplex}. Due to recent advances in non-linear SMT solvers,
+we would like to explore such models in the present framework of
+falsification. Such symbolic models can be generated automatically or
+semi-automatically and can be composed with control code and model
+checked using mature model checkers~\cite{kroening2014cbmc}.
 
 %The challenges are as follows
 %Apply our previous work~\cite{zutshi2014multiple, zutshi2016symbolic}
@@ -151,23 +150,22 @@ systems in~\cite{zutshi2016symbolic}.
 Using these techniques, we propose to address the safety and security
 analysis for control system implementations.
 
-\mypara{Safety Analysis of Sampled Data Control Systems}
-We have explored the symbolic-numeric analysis approach towards
-falsification of safety properties in ~\cite{}.
-
-
-%- Falsification of automated co-operative unmanned air vehicle missions
-
-We are exploring relational PWA models of plants, specifically built
-for the purpose of reachability analysis.  Relational
-abstractions~\cite{Tiwari2012} and our previous
+%- Falsification of automated co-operative unmanned air vehicle
+%missions
+\mypara{Safety Analysis of Sampled Data Control Systems} We want to
+investigate the specific challenges that a complex software
+architecture like UxAS presents to the symbolic-numeric falsification
+analysis. We also want to explore
+relational PWA models of
+plants, specifically built for the purpose of reachability analysis.
+Relational abstractions~\cite{Tiwari2012} and our previous
 research~\cite{zutshi2012timed}. Treating the system as a black box,
 we split the problem into (a) modeling the behavior of the system
 using a piecewise affine discrete time model and (b) encoding the
 search for falsification as a bounded model checking problem. Such a
 model is specialized for the given property.  SMT solvers and
 optimization techniques can be used to model check the resulting
-system.  Furthermore, we would like to explore models based on machine
+system. Furthermore, we would like to explore models based on machine
 learning in the same vein using non-linear SMT
 solvers~\cite{gao2013dreal}.
 
